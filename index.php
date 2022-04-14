@@ -1,7 +1,7 @@
 <?php
 
-use \Hcode\Page;
-use \Slim\Slim;
+use Hcode\Page;
+use Slim\Slim;
 
 require_once("vendor/autoload.php");
 
