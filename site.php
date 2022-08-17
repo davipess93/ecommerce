@@ -145,7 +145,7 @@
     $address = new Address();
     $cart = Cart::getFromSession();
 
-    if (isset($_GET["zipcode"])) {
+    if (!isset($_GET["zipcode"])) {
       $_GET["zipcode"] = $cart->getdeszipcode();
     }
 
@@ -167,7 +167,8 @@
     if (!$address->getdesdistrict()) $address->setdesdistrict('');
     if (!$address->getdescity()) $address->setdescity('');
     if (!$address->getdesstate()) $address->setdesstate('');
-    if (!$address->getdescountry()) $address->setdescountry(''); 
+    if (!$address->getdescountry()) $address->setdescountry('');
+    if (!$address->getdeszipcode()) $address->setdeszipcode('');
 
     $page = new Page();
 
