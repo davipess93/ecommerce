@@ -49,10 +49,11 @@
 
       $sql = new Sql();
 
-      $results = $sql->select("CALL sp_addresses_save(:idaddress, :idperson, :desaddress, :descomplement, :descity, :desstate, :descountry, :deszipcode, :desdistrict)", array(
+      $results = $sql->select("CALL sp_addresses_save(:idaddress, :idperson, :desaddress, :desnumber, :descomplement, :descity, :desstate, :descountry, :deszipcode, :desdistrict)", array(
         ":idaddress" => $this->getidaddress(),
         ":idperson" => $this->getidperson(),
         ":desaddress" => $this->getdesaddress(),
+        ":desnumber" => $this->getdesnumber(),
         ":descomplement" => $this->getdescomplement(),
         ":descity" => $this->getdescity(),
         ":desstate" => $this->getdesstate(),
@@ -63,8 +64,6 @@
       
       if (count($results) > 0) {
         $this->setData($results[0]);
-      } else {
-        echo json_encode(["message" => "Erro ao salvar o endereço."]);exit;
       }
 
     }
