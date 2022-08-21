@@ -142,9 +142,11 @@
         ":iduser" => $iduser
       ));
 
-      $data["desperson"] = utf8_encode($results[0]["desperson"]);
+      $data = $results[0];
 
-      $this->setData($data);
+		  $data['desperson'] = utf8_encode($data['desperson']);
+
+		  $this->setData($data);
 
     }
 
